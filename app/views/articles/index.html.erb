@@ -1,7 +1,15 @@
-<h1>All Articles</h1>
-<%= link_to 'Create new Article', new_article_path%>
-<table>
-    <thead>
+<div class="row">
+<div class="col-6">
+<h4>All Articles</h4>
+
+</div>
+<div class="col-6 text-right">
+<%= link_to 'Create new Article', new_article_path, class:'btn btn-primary btn-sm'%></div>
+
+
+</div>
+<table class="table">
+    <thead class="thead-dark">
         <tr>
             <th>Title</th>
             <th>Description</th>
@@ -17,13 +25,13 @@
                 <td><%= article.title%></td>
                 <td><%= article.description%></td>
                 <td>
-                     <%= link_to 'Show', article_path(article) %>
+                     <%= link_to 'Show', article_path(article), class:'btn btn-success btn-sm' %>
                 </td>
                 <td>
-                     <%= link_to 'Edit', edit_article_path(article) %>
+                     <%= link_to 'Edit', edit_article_path(article), class:'btn btn-warning btn-sm' %>
                 </td>
                 <td>
-                     <%= link_to 'Delete', article_path(article), method: :delete, data:{confirm:"Are you sure?"} %>
+                     <%= link_to 'Delete', article_path(article), class:'btn btn-danger btn-sm', method: :delete, data:{confirm:"Are you sure?"} %>
                 </td>               
                
             </tr>

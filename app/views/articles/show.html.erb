@@ -1,9 +1,14 @@
-<h2>Showing Selected Article</h2>
+<div class="card shadow px-3 py-3">
+
+<h4>Article Detail</h4>
 <p>Article: <%= @article.title%></p>
 <p>Description: <%= @article.description%></p>
 
 
+ <div class="d-flex">
+            <div class=""> <%= link_to 'Edit', edit_article_path(@article), class:'btn btn-danger btn-sm' %> </div> 
+            <div class="ml-3"><%= link_to 'Back to Articles', articles_path, class:'btn btn-secondary btn-sm' %></div>
+</div>
 
-<%= link_to 'Back to Articles', articles_path %> |
-<%= link_to 'Edit', edit_article_path(@article) %>
+</div>
 
