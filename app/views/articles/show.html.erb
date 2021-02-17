@@ -6,7 +6,7 @@
 
 
  <div class="d-flex">
-       <% if logged_in? && current_user == @article.user %>
+       <% if logged_in? && (current_user == article.user || current_user.admin?) %>
 
             <%= link_to "Edit this article", edit_article_path(@article), class: "btn btn-xs btn-primary" %>
 
