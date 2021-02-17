@@ -1,12 +1,4 @@
-<% if @article.errors.any?%>
-<h2>Following errors prevented form from submission!</h2>
-    <ul>
-        <% @article.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-        <% end %>
-    </ul>
-<% end %>
-
+<%= render 'shared/errors', obj: @article %>
 <%= form_for @article do |f| %>
     <p>
         <%= f.label :title %><br>
