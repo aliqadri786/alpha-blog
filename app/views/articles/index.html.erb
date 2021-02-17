@@ -13,6 +13,7 @@
         <tr>
             <th>Title</th>
             <th>Description</th>
+            <th>Created By</th>
             <th>Show</th>
             <th>Edit</th>
             <th>Delete</th>
@@ -24,6 +25,11 @@
             <tr>
                 <td><%= article.title%></td>
                 <td><%= article.description%></td>
+                <td>
+                    <%= article.user.username if article.user%>
+                    <div><small><%= time_ago_in_words(article.created_at)%>ago
+                    <br></small></div>
+                </td>
                 <td>
                      <%= link_to 'Show', article_path(article), class:'btn btn-success btn-sm' %>
                 </td>
