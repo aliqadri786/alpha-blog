@@ -1,46 +1,13 @@
-<div class="row">
-<div class="col-6">
-<h4>All Articles</h4>
+<h1 align="center">Listing all articles</h1>
 
+<div class="d-flex align-items-center justify-content-center">   
+     <%= will_paginate(@articles, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>   
 </div>
-<div class="col-6 text-right">
-<%= link_to 'Create new Article', new_article_path, class:'btn btn-primary btn-sm'%></div>
 
+<%= render 'article', obj: @articles %>
 
+<div class="d-flex align-items-center justify-content-center">    
+    <%= will_paginate(@articles, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
 </div>
-<table class="table">
-    <thead class="thead-dark">
-        <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Created By</th>
-            <th>Show</th>
-            <th>Edit</th>
-            <th>Delete</th>
-           
-        </tr>
-    </thead>
-    <tbody>
-        <% @articles.each do |article| %>
-            <tr>
-                <td><%= article.title%></td>
-                <td><%= article.description%></td>
-                <td>
-                    <%= article.user.username if article.user%>
-                    <div><small><%= time_ago_in_words(article.created_at)%>ago
-                    <br></small></div>
-                </td>
-                <td>
-                     <%= link_to 'Show', article_path(article), class:'btn btn-success btn-sm' %>
-                </td>
-                <td>
-                     <%= link_to 'Edit', edit_article_path(article), class:'btn btn-warning btn-sm' %>
-                </td>
-                <td>
-                     <%= link_to 'Delete', article_path(article), class:'btn btn-danger btn-sm', method: :delete, data:{confirm:"Are you sure?"} %>
-                </td>               
-               
-            </tr>
-        <% end %>
-    </tbody>
-</table>
+
+

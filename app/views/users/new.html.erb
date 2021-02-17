@@ -1,29 +1,3 @@
 <h2 align="center">Signup for Aplha Blog</h2>
-<%= render 'shared/errors', obj: @user %>
-
-<%= form_for @user do |f| %>
-    <p>
-        <%= f.label :username %><br>
-        <%= f.text_field :username, class:'form-control', placeholder:'Enter Username' %>
-    </p>
-
-    <p>
-        <%= f.label :email %><br>
-        <%= f.email_field :email, class:'form-control', placeholder:'Enter Email' %>
-    </p>
-
-    <p>
-        <%= f.label :password %><br>
-        <%= f.password_field :password, class:'form-control', placeholder:'Enter Password' %>
-    </p>
-
-    <p>
-        <div class="d-flex">
-            <div class=""> <%= f.submit 'Signup', class:'btn btn-danger btn-sm' %> </div> 
-            <div class="ml-3"><%= link_to 'Back to Articles', articles_path, class:'btn btn-secondary btn-sm' %></div>
-        </div>
-      
-    </p>
-
-<% end %>
+ <%= render 'form'%>
 

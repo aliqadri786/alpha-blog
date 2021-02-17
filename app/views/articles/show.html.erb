@@ -6,9 +6,20 @@
 
 
  <div class="d-flex">
-            <div class=""> <%= link_to 'Edit', edit_article_path(@article), class:'btn btn-danger btn-sm' %> </div> 
-            <div class="ml-3"><%= link_to 'Back to Articles', articles_path, class:'btn btn-secondary btn-sm' %></div>
+       <% if logged_in? && current_user == @article.user %>
+
+            <%= link_to "Edit this article", edit_article_path(@article), class: "btn btn-xs btn-primary" %>
+
+            <%= link_to "Delete this article", article_path(@article), method: :delete,
+
+            data: { confirm: "Are you sure you want to delete the article?"},
+
+            class: "btn btn-xs btn-danger" %>
+
+    <% end %>
+    <%= link_to "View all articles", articles_path, class: "btn btn-xs btn-success" %>
 </div>
+
 
 </div>
 
