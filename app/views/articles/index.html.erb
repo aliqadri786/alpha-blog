@@ -1,9 +1,17 @@
-<h1 align="center">Listing all articles</h1>
+<h1 align="center">
+    Listing all articles
+    <% if logged_in? %>
+        <%= link_to "Add new article", new_article_path(), class: "btn btn-sm btn-primary py-2" %>
+    <% end %>
+
+</h1>
+
 
 <div class="d-flex align-items-center justify-content-center">   
      <%= will_paginate(@articles, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>   
 </div>
 
+ 
 <%= render 'article', obj: @articles %>
 
 <div class="d-flex align-items-center justify-content-center">    

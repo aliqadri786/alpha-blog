@@ -6,18 +6,18 @@
 
 
  <div class="d-flex">
-       <% if logged_in? && (current_user == article.user || current_user.admin?) %>
+       <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
 
-            <%= link_to "Edit this article", edit_article_path(@article), class: "btn btn-xs btn-primary" %>
+            <%= link_to "Edit this article", edit_article_path(@article), class: "btn btn-sm btn-primary" %>
 
             <%= link_to "Delete this article", article_path(@article), method: :delete,
 
             data: { confirm: "Are you sure you want to delete the article?"},
 
-            class: "btn btn-xs btn-danger" %>
+            class: "btn btn-sm btn-danger ml-3" %>
 
     <% end %>
-    <%= link_to "View all articles", articles_path, class: "btn btn-xs btn-success" %>
+    <%= link_to "View all articles", articles_path, class: "btn btn-sm btn-success ml-3" %>
 </div>
 
 
